@@ -20,8 +20,13 @@ const Index = () => {
       });
       return;
     }
-    setTodos([...todos, inputValue]);
+    setTodos([...todos, { task: inputValue, note: "" }]);
     setInputValue("");
+  };
+
+  const handleNoteChange = (index, note) => {
+    const newTodos = todos.map((todo, i) => (i === index ? { ...todo, note } : todo));
+    setTodos(newTodos);
   };
 
   const deleteTodo = (index) => {
@@ -46,7 +51,12 @@ const Index = () => {
         {todos.map((todo, index) => (
           <ListItem key={index} p={2} bg="gray.100" borderRadius="md">
             <HStack justify="space-between">
-              <Box>{todo}</Box>
+              <Box>
+                <VStack align="stretch">
+                  <Box>{todo.task}</Box>
+                  <Input value={todo.note} onChange={(e) => handleNoteChange(index, e.target.value)} placeholder="Add a note..." size="sm" />
+                </VStack>
+              </Box>
               <IconButton icon={<FaTrash />} onClick={() => deleteTodo(index)} colorScheme="blue" aria-label="Delete todo" />
             </HStack>
           </ListItem>
