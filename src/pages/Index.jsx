@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Heading, Input, Button, List, ListItem, ListIcon, VStack, HStack, IconButton, useToast } from "@chakra-ui/react";
-import { FaPlus, FaTrash } from "react-icons/fa";
+import { FaPlus, FaTrash, FaSave } from "react-icons/fa";
 
 const Index = () => {
   const [todos, setTodos] = useState([]);
@@ -58,6 +58,7 @@ const Index = () => {
                 </VStack>
               </Box>
               <IconButton icon={<FaTrash />} onClick={() => deleteTodo(index)} colorScheme="blue" aria-label="Delete todo" />
+              <IconButton icon={<FaSave />} onClick={() => {}} colorScheme="green" aria-label="Save todo" />
             </HStack>
           </ListItem>
         ))}
