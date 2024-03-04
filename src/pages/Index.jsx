@@ -40,14 +40,14 @@ const Index = () => {
       <Heading mb="8">Todo App</Heading>
       <HStack>
         <Input value={inputValue} onChange={handleInputChange} onKeyPress={handleKeyPress} placeholder="Add a new task..." />
-        <IconButton icon={<FaPlus />} onClick={addTodo} colorScheme="red" aria-label="Add todo" />
+        <IconButton icon={<FaPlus />} onClick={addTodo} colorScheme="blue" aria-label="Add todo" />
       </HStack>
       <List spacing={3} my={5} w="100%">
         {todos.map((todo, index) => (
           <ListItem key={index} p={2} bg="gray.100" borderRadius="md">
             <HStack justify="space-between">
               <Box>{todo}</Box>
-              <IconButton icon={<FaTrash />} onClick={() => deleteTodo(index)} colorScheme="red" aria-label="Delete todo" />
+              <IconButton icon={<FaTrash />} onClick={() => deleteTodo(index)} colorScheme="blue" aria-label="Delete todo" />
             </HStack>
           </ListItem>
         ))}
