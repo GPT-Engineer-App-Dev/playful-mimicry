@@ -46,7 +46,10 @@ const Index = () => {
         {todos.map((todo, index) => (
           <ListItem key={index} p={2} bg="gray.100" borderRadius="md">
             <HStack justify="space-between">
-              <Box>{todo}</Box>
+              <VStack align="start">
+                <Box>{todo}</Box>
+                <Input placeholder="Add a note..." size="sm" />
+              </VStack>
               <IconButton icon={<FaTrash />} onClick={() => deleteTodo(index)} colorScheme="red" aria-label="Delete todo" />
             </HStack>
           </ListItem>
