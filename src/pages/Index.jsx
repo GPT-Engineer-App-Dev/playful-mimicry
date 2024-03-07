@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Box, Heading, Input, VStack, Textarea, Button, HStack, IconButton, List, ListItem, useToast } from "@chakra-ui/react";
-import { FaSave, FaPlus, FaTrash } from "react-icons/fa";
+import { Box, Heading, Input, Button, List, ListItem, ListIcon, VStack, HStack, IconButton, useToast } from "@chakra-ui/react";
+import { FaPlus, FaTrash } from "react-icons/fa";
 
 const Index = () => {
   const [todos, setTodos] = useState([]);
