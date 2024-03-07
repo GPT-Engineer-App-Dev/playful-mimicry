@@ -1,34 +1,11 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Index from "./pages/Index";
-import About from "./components/About";
-import Footer from "./components/Footer";
-import Navigation from "./components/Navigation";
+import Index from "./pages/Index.jsx";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Navigation />
-              <Index />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <>
-              <Navigation />
-              <About />
-              <Footer />
-            </>
-          }
-        />
+        <Route exact path="/" element={<Index />} />
       </Routes>
     </Router>
   );
